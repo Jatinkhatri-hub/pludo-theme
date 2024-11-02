@@ -1,1 +1,323 @@
-{"sections":{"image_banner":{"type":"image-banner","blocks":{"image_VVBnWp":{"type":"image","settings":{"overlay_image":"shopify:\/\/shop_images\/Group_299.png"}},"text_aqkfxR":{"type":"text","settings":{"text":"<h3>Staying hydrated involves more than just water; <\/h3><h3>the balance of electrolytes is key.<\/h3>","text_style":"body"}},"button":{"type":"buttons","settings":{"button_label_1":"SHOP NOW","button_link_1":"shopify:\/\/collections\/all","button_style_secondary_1":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["image_VVBnWp","text_aqkfxR","button"],"settings":{"image":"shopify:\/\/shop_images\/banner_desktop.png","image_overlay_opacity":40,"image_height":"large","desktop_content_position":"bottom-left","enable_full_width":false,"show_text_box":false,"desktop_content_alignment":"left","color_scheme":"scheme-4","image_behavior":"none","image_mobile":"shopify:\/\/shop_images\/banner_mobile.png","mobile_content_alignment":"left","stack_images_on_mobile":false,"show_text_below":false,"margin_bottom":120,"margin_bottom_mobile":100,"change_text_color_on_mobile":false}},"popup_YHJxdR":{"type":"popup","settings":{"enable_popup":true,"popup_image":"shopify:\/\/shop_images\/science.webp","popup_text":"20% Off","popup_link":""}},"popup_x3f47Y":{"type":"popup","settings":{"enable_popup":true,"popup_image":"shopify:\/\/shop_images\/Screenshot_2024-08-05_at_8.51.20_AM_2.png","popup_text":"Free Shipping On Orders $50+","popup_link":""}},"rich_text_CYVkhA":{"type":"rich-text","blocks":{"text_MDtDgJ":{"type":"text","settings":{"text":"","single_text":"“Our aim was to develop the purest, comprehensive, and exceptionally powerful electrolyte blend available.”","font_size":40,"mobile_font_size":28}},"line_BGrJcg":{"type":"line","settings":{"border_width":1,"border_color":"#000000","margin_top":120,"margin_top_mobile":100}}},"block_order":["text_MDtDgJ","line_BGrJcg"],"settings":{"desktop_content_position":"left","content_alignment":"left","color_scheme":"scheme-1","full_width":false,"padding_top":0,"padding_bottom":40}},"featured_collection":{"type":"featured-collection","settings":{"title":"Shop Our Flavors","heading_size":"h2","description":"","show_description":false,"description_style":"body","collection":"frontpage","products_to_show":4,"columns_desktop":4,"full_width":false,"show_view_all":false,"view_all_style":"solid","enable_desktop_slider":false,"color_scheme":"scheme-1","custom_card":true,"image_ratio":"adapt","image_shape":"default","show_secondary_image":true,"show_vendor":false,"show_rating":false,"quick_add":"standard","columns_mobile":"1","swipe_on_mobile":true,"padding_top":0,"padding_bottom":120}},"image_banner_CiXEy6":{"type":"image-banner","blocks":{"text_bR6Pf9":{"type":"text","settings":{"text":"<h3>Cognitive Function, Muscle<\/h3><h3>Recovery, Reduced Cramping<\/h3>","text_style":"body"}},"buttons_tEBAL9":{"type":"buttons","settings":{"button_label_1":"SHOP NOW","button_link_1":"shopify:\/\/collections\/all","button_style_secondary_1":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["text_bR6Pf9","buttons_tEBAL9"],"settings":{"image":"shopify:\/\/shop_images\/IMG_7789_desktop.png","image_overlay_opacity":0,"image_height":"medium","desktop_content_position":"bottom-left","enable_full_width":false,"show_text_box":false,"desktop_content_alignment":"left","color_scheme":"scheme-4","image_behavior":"none","image_mobile":"shopify:\/\/shop_images\/IMG_7789_1_mobile.png","mobile_content_alignment":"left","stack_images_on_mobile":false,"show_text_below":false,"margin_bottom":0,"margin_bottom_mobile":0,"change_text_color_on_mobile":false}},"image_duo_pjDJWk":{"type":"image-duo","blocks":{"image_fhFjGk":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/image_52.png","title":"Replenish The Body","link":""}},"image_eC9pyq":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/image_53.png","title":"Balance The Mind","link":""}}},"block_order":["image_fhFjGk","image_eC9pyq"],"settings":{}},"multicolumn_pyUMgF":{"type":"multicolumn","blocks":{"column_CfxiUe":{"type":"column","settings":{"enable_dot":true,"title":"Cognitive Function","text":"<p>Magnesium is linked to maintenance of normal brain function.<\/p>","link_label":"","link":""}},"column_8CJBnK":{"type":"column","settings":{"enable_dot":true,"title":"Muscle Recovery","text":"<p>Magnesium is linked to maintenance of normal brain function.<\/p>","link_label":"","link":""}},"column_n6azLK":{"type":"column","settings":{"enable_dot":true,"title":"Reduced Cramping","text":"<p>Sodium, potassium and magnesium muscle function<\/p>","link_label":"","link":""}}},"block_order":["column_CfxiUe","column_8CJBnK","column_n6azLK"],"settings":{"background":"#F7F7F4","title":"Benefits","heading_size":"h1","image_width":"full","image_ratio":"adapt","columns_desktop":3,"corner_radius":20,"column_alignment":"center","background_style":"primary","button_label":"","button_link":"","color_scheme":"scheme-1","columns_mobile":"1","swipe_on_mobile":true,"padding_top":36,"padding_bottom":36}},"image_banner_AKrJLy":{"type":"image-banner","blocks":{"text_LCCEWi":{"type":"text","settings":{"text":"<h2>Cognitive Function, Muscle<\/h2><h2>Recovery, Reduced Cramping<\/h2>","text_style":"body"}},"buttons_hF4J3h":{"type":"buttons","settings":{"button_label_1":"SHOP NOW","button_link_1":"shopify:\/\/collections\/all","button_style_secondary_1":true,"button_label_2":"","button_link_2":"","button_style_secondary_2":false}}},"block_order":["text_LCCEWi","buttons_hF4J3h"],"settings":{"image":"shopify:\/\/shop_images\/image_15_desktop.png","image_overlay_opacity":0,"image_height":"medium","desktop_content_position":"bottom-left","enable_full_width":false,"show_text_box":false,"desktop_content_alignment":"left","color_scheme":"scheme-1","image_behavior":"none","image_mobile":"shopify:\/\/shop_images\/image_15_1_mobile.png","mobile_content_alignment":"left","stack_images_on_mobile":true,"show_text_below":false,"margin_bottom":120,"margin_bottom_mobile":100,"change_text_color_on_mobile":true}}},"order":["image_banner","popup_YHJxdR","popup_x3f47Y","rich_text_CYVkhA","featured_collection","image_banner_CiXEy6","image_duo_pjDJWk","multicolumn_pyUMgF","image_banner_AKrJLy"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "image_banner": {
+      "type": "image-banner",
+      "blocks": {
+        "image_VVBnWp": {
+          "type": "image",
+          "settings": {
+          }
+        },
+        "text_aqkfxR": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Staying hydrated involves more than just water; </h3><h3>the balance of electrolytes is key.</h3>",
+            "text_style": "body"
+          }
+        },
+        "button": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP NOW",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "image_VVBnWp",
+        "text_aqkfxR",
+        "button"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Screenshot_2024-08-05_at_8.51.20_AM_2.png",
+        "image_overlay_opacity": 40,
+        "image_height": "large",
+        "desktop_content_position": "bottom-left",
+        "enable_full_width": false,
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-4",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": false,
+        "show_text_below": false,
+        "margin_bottom": 120,
+        "margin_bottom_mobile": 100,
+        "change_text_color_on_mobile": false
+      }
+    },
+    "popup_YHJxdR": {
+      "type": "popup",
+      "settings": {
+        "enable_popup": true,
+        "popup_text": "20% Off",
+        "popup_link": ""
+      }
+    },
+    "popup_x3f47Y": {
+      "type": "popup",
+      "settings": {
+        "enable_popup": true,
+        "popup_text": "Free Shipping On Orders $50+",
+        "popup_link": ""
+      }
+    },
+    "rich_text_CYVkhA": {
+      "type": "rich-text",
+      "blocks": {
+        "text_MDtDgJ": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "single_text": "“Our aim was to develop the purest, comprehensive, and exceptionally powerful electrolyte blend available.”",
+            "font_size": 40,
+            "mobile_font_size": 28
+          }
+        },
+        "line_BGrJcg": {
+          "type": "line",
+          "settings": {
+            "border_width": 1,
+            "border_color": "#000000",
+            "margin_top": 120,
+            "margin_top_mobile": 100
+          }
+        }
+      },
+      "block_order": [
+        "text_MDtDgJ",
+        "line_BGrJcg"
+      ],
+      "settings": {
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "full_width": false,
+        "padding_top": 0,
+        "padding_bottom": 40
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "settings": {
+        "title": "Shop Our Flavors",
+        "heading_size": "h2",
+        "description": "",
+        "show_description": false,
+        "description_style": "body",
+        "collection": "frontpage",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "full_width": false,
+        "show_view_all": false,
+        "view_all_style": "solid",
+        "enable_desktop_slider": false,
+        "color_scheme": "scheme-1",
+        "custom_card": true,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "quick_add": "standard",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 0,
+        "padding_bottom": 120
+      }
+    },
+    "image_banner_CiXEy6": {
+      "type": "image-banner",
+      "blocks": {
+        "text_bR6Pf9": {
+          "type": "text",
+          "settings": {
+            "text": "<h3>Cognitive Function, Muscle</h3><h3>Recovery, Reduced Cramping</h3>",
+            "text_style": "body"
+          }
+        },
+        "buttons_tEBAL9": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP NOW",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_bR6Pf9",
+        "buttons_tEBAL9"
+      ],
+      "settings": {
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "bottom-left",
+        "enable_full_width": false,
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-4",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": false,
+        "show_text_below": false,
+        "margin_bottom": 0,
+        "margin_bottom_mobile": 0,
+        "change_text_color_on_mobile": false
+      }
+    },
+    "image_duo_pjDJWk": {
+      "type": "image-duo",
+      "blocks": {
+        "image_fhFjGk": {
+          "type": "image",
+          "settings": {
+            "title": "Replenish The Body",
+            "link": ""
+          }
+        },
+        "image_eC9pyq": {
+          "type": "image",
+          "settings": {
+            "title": "Balance The Mind",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "image_fhFjGk",
+        "image_eC9pyq"
+      ],
+      "settings": {
+      }
+    },
+    "multicolumn_pyUMgF": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_CfxiUe": {
+          "type": "column",
+          "settings": {
+            "enable_dot": true,
+            "title": "Cognitive Function",
+            "text": "<p>Magnesium is linked to maintenance of normal brain function.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_8CJBnK": {
+          "type": "column",
+          "settings": {
+            "enable_dot": true,
+            "title": "Muscle Recovery",
+            "text": "<p>Magnesium is linked to maintenance of normal brain function.</p>",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "column_n6azLK": {
+          "type": "column",
+          "settings": {
+            "enable_dot": true,
+            "title": "Reduced Cramping",
+            "text": "<p>Sodium, potassium and magnesium muscle function</p>",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_CfxiUe",
+        "column_8CJBnK",
+        "column_n6azLK"
+      ],
+      "settings": {
+        "background": "#F7F7F4",
+        "title": "Benefits",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "corner_radius": 20,
+        "column_alignment": "center",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "scheme-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "image_banner_AKrJLy": {
+      "type": "image-banner",
+      "blocks": {
+        "text_LCCEWi": {
+          "type": "text",
+          "settings": {
+            "text": "<h2>Cognitive Function, Muscle</h2><h2>Recovery, Reduced Cramping</h2>",
+            "text_style": "body"
+          }
+        },
+        "buttons_hF4J3h": {
+          "type": "buttons",
+          "settings": {
+            "button_label_1": "SHOP NOW",
+            "button_link_1": "shopify://collections/all",
+            "button_style_secondary_1": true,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_LCCEWi",
+        "buttons_hF4J3h"
+      ],
+      "settings": {
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "desktop_content_position": "bottom-left",
+        "enable_full_width": false,
+        "show_text_box": false,
+        "desktop_content_alignment": "left",
+        "color_scheme": "scheme-1",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "stack_images_on_mobile": true,
+        "show_text_below": false,
+        "margin_bottom": 120,
+        "margin_bottom_mobile": 100,
+        "change_text_color_on_mobile": true
+      }
+    }
+  },
+  "order": [
+    "image_banner",
+    "popup_YHJxdR",
+    "popup_x3f47Y",
+    "rich_text_CYVkhA",
+    "featured_collection",
+    "image_banner_CiXEy6",
+    "image_duo_pjDJWk",
+    "multicolumn_pyUMgF",
+    "image_banner_AKrJLy"
+  ]
+}
