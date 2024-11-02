@@ -1,0 +1,277 @@
+<style>
+  .custom-section {
+    background-color: black;
+    color: white;
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+  .custom-section__title {
+    width: 900px;
+    margin: auto auto 4rem;
+    border-bottom: 1px solid white;
+  }
+  .custom-section__title h2 {
+    width: 60%;
+    font-size: 48px;
+    color: white;
+    margin-top: 0;
+  }
+  .custom-section__paragraph {
+    font-size: 22px;
+    margin: 50px auto
+  }
+  .custom-section__content {
+    padding: 2rem 0;
+    width: 900px;
+    margin: 0 auto;
+  }
+  .custom-section__image {
+    margin: 100px auto;
+  }
+  .custom-section__image-text {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 2rem;
+  }
+  .custom-section__image-container img {
+    padding-right: 10px;
+    padding-top: 70px;
+  }
+  .custom-section__image-container {
+    display: flex;
+    flex-direction: column;
+  }
+  .custom-section__image-text .caption {
+    font-size: 22px;
+    margin-top: 0.5rem;
+  }
+  .separator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.25rem;
+    color: white;
+  }
+  .separator span {
+    border-radius: 100%;
+    width: 25px;
+    text-align: center;
+    color: black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .separator:before,
+  .separator:after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: white;
+  }
+  @media screen and (max-width: 750px) {
+    .custom-section {
+      width: 100%;
+    }
+    .custom-section__title {
+      width: 90%;
+      margin: auto;
+    }
+    .custom-section__title h2 {
+      width: unset;
+      font-size: 32px;
+    }
+    .custom-section__content {
+      width: unset;
+    }
+    .custom-section__image img {
+      width: 90%;
+      margin: 0 auto;
+    }
+    .custom-section__paragraph {
+      width: 90%;
+      margin: 0 auto;
+    }
+    .custom-section__image-text {
+      flex-direction: column;
+    }
+    .custom-section__image-container {
+      width: 75%;
+      margin: 0 auto;
+    }
+    .custom-section__image-container img {
+      width: 100%;
+      margin: 50px auto 10px;
+      border-right: unset;
+      padding-right: unset;
+      padding-top: 30px;
+    }
+    .custom-section__text {
+      width: 90%;
+      margin: 0 auto;
+    }
+    .separator{
+        display: none;
+    }
+    .custom-mobile-width{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .caption{
+        font-size: 15px!important;
+    }
+  }
+</style>
+<section class="custom-section {{ section.settings.color_scheme }}">
+  <div class="custom-section__title">
+    <h2>{{ section.settings.title }}</h2>
+  </div>
+  <div class="custom-section__content">
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'image' %}
+          <div class="custom-section__image" style="text-align: center;">
+            <img loading="lazy" src="{{ block.settings.image | image_url: width: 800 }}" alt="">
+            {% if block.settings.image_caption %}
+              <p class="caption">{{ block.settings.image_caption }}</p>
+            {% endif %}
+          </div>
+
+        {% when 'paragraph' %}
+          <p class="custom-section__paragraph">{{ block.settings.paragraph_text }}</p>
+
+        {% when 'image_text' %}
+          <div class="separator">
+            <span>{{ block.settings.separator_letter }}</span>
+          </div>
+          <div class="custom-section__image-text">
+            <div class="custom-section__image-container">
+              <img loading="lazy" src="{{ block.settings.image | image_url: width: 440 }}" alt="">
+              {% if block.settings.image_caption %}
+                <p class="caption">{{ block.settings.image_caption }}</p>
+              {% endif %}
+            </div>
+            <div class="custom-section__paragraph">
+              <p>{{ block.settings.text }}</p>
+            </div>
+          </div>
+
+        {% when 'separator' %}
+          <div class="separator">
+            {% style %}
+              .separator {
+                margin-top: {{ block.settings.separator_margin_top }}px;
+                margin-bottom: {{ block.settings.separator_margin_bottom }}px;
+              }
+            {% endstyle %}
+            <span>{{ block.settings.separator_letter }}</span>
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</section>
+{% schema %}
+  {
+    "name": "Custom Content Section",
+    "settings": [
+      {
+        "type": "color_scheme",
+        "id": "color_scheme",
+        "label": "Color Scheme",
+        "default": "background-1"
+      }, {
+        "type": "text",
+        "id": "title",
+        "label": "Page Title",
+        "default": "Your Page Title"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "text",
+            "id": "image_caption",
+            "label": "Image Caption (e.g., employee name)"
+          }
+        ]
+      }, {
+        "type": "paragraph",
+        "name": "Paragraph Block",
+        "settings": [
+          {
+            "type": "html",
+            "id": "paragraph_text",
+            "label": "Paragraph Text"
+          }
+        ]
+      }, {
+        "type": "image_text",
+        "name": "Image with Text Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "text",
+            "id": "separator_letter",
+            "label": "Separator Letter",
+            "default": "A"
+          }, {
+            "type": "textarea",
+            "id": "text",
+            "label": "Text",
+            "default": "This is some side-by-side text content."
+          }, {
+            "type": "text",
+            "id": "image_caption",
+            "label": "Image Caption (e.g., employee name)"
+          }
+        ]
+      }, {
+        "type": "separator",
+        "name": "Separator Block",
+        "settings": [
+          {
+            "type": "text",
+            "id": "separator_letter",
+            "label": "Separator Letter",
+            "default": "A"
+          }, {
+            "type": "range",
+            "id": "separator_margin_top",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "Margin Top",
+            "default": 0
+          }, {
+            "type": "range",
+            "id": "separator_margin_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 4,
+            "unit": "px",
+            "label": "Margin Bottom",
+            "default": 0
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Custom Content Section",
+        "category": "Custom"
+      }
+    ]
+  }
+{% endschema %}

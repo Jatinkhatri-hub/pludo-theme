@@ -1,0 +1,161 @@
+
+    {{ 'section-about.css' | asset_url | stylesheet_tag }}
+    <section class="about-us-section">
+        {% for block in section.blocks %}
+            {% if block.type == "text_block" %}
+                    <div class="about-paragraph">
+                        <p>{{ block.settings.text_content }}</p>
+                    </div>
+            {% endif %}
+
+            {% if block.type == "image_caption" %}
+                <div class="about-image-caption">
+                    {% if block.settings.image %}
+                        <img loading="lazy" src="{{ block.settings.image | image_url: width: 900, height: 540  }}" alt="Image with Caption">
+                    {% endif %}
+                    <p>{{ block.settings.caption }}</p>
+                    <p class="bio">{{ block.settings.bio_text }}</p>
+                </div>
+            {% endif %}
+
+            {% if block.type == "image_text_side" %}
+                <div class="about-image-text">
+                    <div class="image-wrapper">
+                        {% if block.settings.side_image %}
+                            <img loading="lazy" src="{{ block.settings.side_image | image_url: width: 440, height: 540 }}" alt="Image with Text Side by Side">
+                        {% endif %}
+                    </div>
+                    <div class="text-wrapper">
+                        <h3>{{ block.settings.side_heading }}</h3>
+                        <ul>
+                            {% if block.settings.side_bio_text != blank %}
+                                <li class="li-marker">{{ block.settings.side_bio_text }}</li>
+                            {% endif %}
+                            {% if block.settings.side_bio_text_2 != blank %}
+                                <li class="li-marker">{{ block.settings.side_bio_text_2 }}</li>
+                            {% endif %}
+                            {% if block.settings.side_bio_text_3 != blank %}
+                                <li class="li-marker">{{ block.settings.side_bio_text_3 }}</li>
+                            {% endif %}
+                            {% if block.settings.side_bio_text_4 != blank %}
+                                <li class="li-marker">{{ block.settings.side_bio_text_4 }}</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </section>
+    {% schema %}
+        {
+        "name": "About Us Section",
+        "settings": [],
+        "blocks": [
+            {
+            "type": "text_block",
+            "name": "Text Block",
+            "settings": [
+                {
+                "type": "textarea",
+                "id": "text_content",
+                "label": "Text Content",
+                "default": "Pludo was founded with a mission to create premium natural products tailored to elevate overall physical well-being."
+                }
+            ]
+            },
+            {
+            "type": "image_caption",
+            "name": "Image with Caption",
+            "settings": [
+                {
+                "type": "image_picker",
+                "id": "image",
+                "label": "Image"
+                },
+                {
+                "type": "text",
+                "id": "caption",
+                "label": "Caption Text"
+                },
+                {
+                "type": "textarea",
+                "id": "bio_text",
+                "label": "Bio Text"
+                }
+            ]
+            },
+            {
+            "type": "image_text_side",
+            "name": "Image Text Side by Side",
+            "settings": [
+                {
+                "type": "image_picker",
+                "id": "side_image",
+                "label": "Side Image"
+                },
+                {
+                "type": "text",
+                "id": "side_heading",
+                "label": "Heading"
+                },
+                {
+                "type": "textarea",
+                "id": "side_bio_text",
+                "label": "Text"
+                },
+                {
+                "type": "textarea",
+                "id": "side_bio_text_2",
+                "label": "Text"
+                },
+                {
+                "type": "textarea",
+                "id": "side_bio_text_3",
+                "label": "Text"
+                },
+                {
+                "type": "textarea",
+                "id": "side_bio_text_4",
+                "label": "Text"
+                }
+            ]
+            },
+            {
+            "type": "contact_info",
+            "name": "Contact Information",
+            "settings": [
+                {
+                "type": "text",
+                "id": "contact_heading",
+                "label": "Contact Heading",
+                "default": "Contact Information"
+                },
+                {
+                "type": "text",
+                "id": "general_contact",
+                "label": "General Questions Email",
+                "default": "contact@pludostore.com"
+                },
+                {
+                "type": "text",
+                "id": "partnership_contact",
+                "label": "Partnerships Email",
+                "default": "partners@pludostore.com"
+                },
+                {
+                "type": "text",
+                "id": "media_contact",
+                "label": "Media Inquiries Email",
+                "default": "media@pludostore.com"
+                }
+            ]
+            }
+        ],
+        "presets": [
+            {
+            "name": "About Us Section",
+            "category": "Custom Sections"
+            }
+        ]
+        }
+    {% endschema %}

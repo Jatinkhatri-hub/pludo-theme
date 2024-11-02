@@ -1,0 +1,225 @@
+<div class="interactive-text-image page-width">
+    <div id="desktop-flex" class="interactive-text-image__container">
+        <div class="interactive-text-image__text">
+            <p class="interactive-text-image__title">{{ section.settings.title }}</p>
+            <ul class="interactive-text-image__list">
+                {% for block in section.blocks %}
+                    <li class="interactive-text-image__item" data-image-id="image-{{ block.id }}">
+                        {{ block.settings.sign_text }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="interactive-text-image__image-container">
+            {% for block in section.blocks %}
+                <img 
+                    loading="lazy"
+                    src="{{ block.settings.sign_image | image_url: width: 400, height: 500 }}" 
+                    alt="{{ block.settings.sign_text }}" 
+                    class="interactive-text-image__image {% if forloop.first %}is-active{% endif %}" 
+                    id="image-{{ block.id }}" />
+            {% endfor %}
+        </div>
+    </div>
+    <div id="mobile" class="interactive-text-image__mobile-container">
+        <div class="interactive-text-image__text">
+            <p class="interactive-text-image__title">{{ section.settings.title }}</p>
+            <ul class="interactive-text-image__list">
+                {% for block in section.blocks %}
+                    <li class="interactive-text-image__item" data-image-id="image-{{ block.id }}">
+                        {{ block.settings.sign_text }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="interactive-text-image__carousel">
+            {% for block in section.blocks %}
+                <img
+                    loading="lazy" 
+                    src="{{ block.settings.sign_image | image_url: width: 300, height: 370 }}" 
+                    alt="{{ block.settings.sign_text }}" 
+                    class="interactive-text-image__carousel-image {% if forloop.first %}is-active{% endif %}" 
+                    id="image-{{ block.id }}" />
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<style>
+.interactive-text-image{
+    margin: 120px auto;
+}
+.interactive-text-image__container {
+    display: flex;
+    align-items: flex-start;
+    gap: 9%;
+    position: relative;
+    overflow: hidden;
+}
+.interactive-text-image__text {
+    min-width: 60%;
+    flex: 1;
+}
+.interactive-text-image__title {
+    font-size: 16px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+.interactive-text-image__list {
+    list-style: none;
+    padding: 0;
+}
+.interactive-text-image__item {
+    cursor: pointer;
+    font-size: 35px;
+    margin-bottom: 10px;
+    color: rgba(var(--color-foreground));
+}
+.interactive-text-image__item:hover {
+    text-decoration: underline;
+}
+.interactive-text-image__image-container {
+    flex: 1;
+    position: relative;
+    min-height: 500px;
+}
+.interactive-text-image__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+}
+.interactive-text-image__image.is-active {
+    opacity: 1;
+}
+.interactive-text-image__mobile-container {
+    display: none;
+}
+@media (max-width: 768px) {
+    .interactive-text-image__carousel {
+        display: flex;
+        overflow-x: auto;
+        gap: 10px;
+    }
+    .interactive-text-image{
+        margin: 100px auto;
+    }
+    .interactive-text-image__carousel-image {
+        flex: none;
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+    }
+
+    .interactive-text-image__carousel-image.is-active {
+        display: block;
+    }
+    .interactive-text-image__list {
+        padding-left: 20px;
+    }
+    .interactive-text-image__item {
+        font-size: 16px;
+        margin-bottom: 10px;
+        color: rgba(var(--color-foreground));
+        position: relative;
+    }
+    .bullet-active {
+        list-style-type: disc;
+    }
+}
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const items = document.querySelectorAll('.interactive-text-image__item');
+        const images = document.querySelectorAll('.interactive-text-image__image');
+        
+        items.forEach(item => {
+            item.addEventListener('mouseover', () => {
+                images.forEach(img => img.classList.remove('is-active'));
+                
+                const targetImageId = item.getAttribute('data-image-id');
+                document.getElementById(targetImageId).classList.add('is-active');
+            });
+        });
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+    const items = document.querySelectorAll('.interactive-text-image__item');
+    const images = document.querySelectorAll('.interactive-text-image__carousel-image');
+
+    function updateActiveBullet(activeId) {
+        console.log(`Updating active bullet for image ID: ${activeId}`);
+        items.forEach(item => {
+            const itemId = item.getAttribute('data-image-id');
+            item.classList.remove('bullet-active'); // Remove active bullet class from all
+
+            if (itemId === activeId) {
+                console.log(`Adding bullet-active class to item with ID: ${itemId}`);
+                item.classList.add('bullet-active');
+            }
+        });
+    }
+
+    // IntersectionObserver to detect which image is in view
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log(`Image in view: ${entry.target.id}`);
+                updateActiveBullet(entry.target.id);
+            }
+        });
+    }, {
+        root: document.querySelector('.interactive-text-image__carousel'),
+        threshold: 0.5 // Adjust as needed for visibility
+    });
+
+    // Observe each image
+    images.forEach(image => observer.observe(image));
+});
+
+
+</script>
+
+{% schema %}
+{
+    "name": "Interactive Text Image",
+    "settings": [
+        {
+            "type": "text",
+            "id": "title",
+            "label": "Section Title",
+            "default": "Signs You Are Lacking Electrolytes"
+        }
+    ],
+    "blocks": [
+        {
+            "type": "sign_item",
+            "name": "Sign Item",
+            "settings": [
+                {
+                    "type": "text",
+                    "id": "sign_text",
+                    "label": "Sign Text",
+                    "default": "Dry Mouth"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "sign_image",
+                    "label": "Sign Image"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Interactive Text and Image",
+            "category": "Custom Sections"
+        }
+    ]
+}
+{% endschema %}

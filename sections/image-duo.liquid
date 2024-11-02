@@ -1,0 +1,117 @@
+<section class="image-duo-section page-width">
+{{ 'section-image-duo.css' | asset_url | stylesheet_tag }}
+    <div class="image-duo-container width-fixer">
+      {%- for block in section.blocks -%}
+        <div class="image-duo-item">
+          {%- if forloop.first -%}
+            <!-- Text and dot above the first image -->
+            <div class="image-duo-text-above">
+              <span id="duo_dot" class="dot"></span>
+              <p>{{ block.settings.title }}</p>
+            </div>
+            <a href="{{ block.settings.link }}" class="image-link">
+              <img
+                loading="lazy"
+                src="{{ block.settings.image | img_url: 'large' }}"
+                alt="{{ block.settings.image.alt | escape }}"
+                class="image-duo-img" />
+            </a>
+          {%- else -%}
+            <a href="{{ block.settings.link }}" class="image-link">
+              <img
+                loading="lazy"
+                src="{{ block.settings.image | img_url: 'large' }}"
+                alt="{{ block.settings.image.alt | escape }}"
+                class="image-duo-img" />
+            </a>
+            <!-- Text and dot below the second image -->
+            <div class="image-duo-text-below">
+              <span id="duo_dot" class="dot"></span>
+              <p>{{ block.settings.title }}</p>
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const imageItems = document.querySelectorAll('.image-duo-item');
+        const dots = document.querySelectorAll('#duo_dot');
+        const observerOptions = {
+            root: null, // viewport
+            rootMargin: '0px',
+            threshold: 0.1 // trigger when 10% of the item is visible
+        };
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                const img = entry.target.querySelector('.image-duo-img');
+                img.style.transition = 'transform 1.5s ease-in-out'; // Slower transition duration
+                img.style.transform = 'scale(1)';
+                observer.unobserve(entry.target); // Stop observing once the animation is triggered
+                }
+            });
+        }, observerOptions);
+  
+        const dotObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+            const dot = entry.target.querySelector('#duo_dot');
+            dot.style.transition = 'background-color 1s ease-in'; // Slow down the dot fill
+            dot.style.backgroundColor = '#000'; // Change this to your desired color fill
+            dot.style.opacity = 1;
+            }
+        });
+        }, observerOptions);
+  
+        imageItems.forEach(item => {
+        const img = item.querySelector('.image-duo-img');
+        img.style.transform = 'scale(0.8)'; // Start with smaller scale for animation
+        imageObserver.observe(item);
+        });
+  
+        dots.forEach(dot => {
+        dot.style.opacity = 0.3; // Start with low opacity
+        dotObserver.observe(dot.parentElement);
+        });
+    });
+  
+  </script>
+</section>
+
+{% schema %}
+  {
+    "name": "Image Duo Section",
+    "settings": [],
+    "blocks": [
+      {
+        "type": "image",
+        "name": "Image Block",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Text Below Image",
+            "default": "Replenish The Body"
+          }, {
+            "type": "url",
+            "id": "link",
+            "label": "Link to Collection"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Image Duo"
+      }
+    ]
+  }
+
+
+{% endschema %}

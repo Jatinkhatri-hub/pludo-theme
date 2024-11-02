@@ -1,0 +1,125 @@
+{% if section.settings.enable_popup %}
+    <div class="popup-container" style="display: none;" id="popup-{{ section.id }}">
+        <button class="popup-close" onclick="document.getElementById('popup-{{ section.id }}').style.display='none'">×</button>
+        {% if section.settings.popup_image %}
+            <img src="{{ section.settings.popup_image | image_url: width: 160, height: 97 }}" alt="Popup Image">
+        {% endif %}
+        <div class="popup-text">
+            <a href="{{ section.settings.popup_link }}">{{ section.settings.popup_text }}</a>
+        </div>
+    </div>
+{% endif %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        document.querySelectorAll('.popup-container').forEach((popup, index) => {
+            // Set each popup's bottom position to stack them vertically
+            popup.style.bottom = `${20 + index * 130}px`; // Adjust the `100` value for spacing between popups
+
+            // Show each popup after a small delay
+            setTimeout(() => {
+                popup.style.display = 'flex';
+            }, 1000 * (index + 1)); // Stagger each popup by 1 second
+        });
+    });
+</script>
+
+<style>
+.popup-container {
+    position: fixed;
+    right: 20px;
+    width: 480px;
+    background-color: #fff;
+    border-radius: 100px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    z-index: 1000;
+    animation: slideUp 0.5s ease-out;
+}
+
+.popup-container img {
+    border-radius: 100px;
+    margin-right: 10px;
+}
+
+.pop-content{
+    width: 70%;
+    margin: 0px auto;
+}
+
+.popup-text {
+    font-size: 16px;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.popup-text a {
+    text-decoration: none;
+    color: rgb(var(--color-foreground));
+}
+
+.popup-close {
+    background: none;
+    border: none;
+    font-size: 16px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    cursor: pointer;
+}
+@media screen and (max-width: 749px) {
+    .popup-container {
+        width: 90%!important;
+        margin: 0 auto;
+    }
+
+}
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+</style>
+{% schema %}
+    {
+      "name": "Popup",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "enable_popup",
+          "label": "Enable Popup",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "popup_image",
+          "label": "Popup Image"
+        },
+        {
+          "type": "text",
+          "id": "popup_text",
+          "label": "Popup Text",
+          "default": "Free Shipping On Orders $50+"
+        },
+        {
+          "type": "url",
+          "id": "popup_link",
+          "label": "Popup Link"
+        }
+      ],
+      "presets": [
+        {
+          "name": "Popup"
+        }
+      ]
+    }
+{% endschema %}
+    
